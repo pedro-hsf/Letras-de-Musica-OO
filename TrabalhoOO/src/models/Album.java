@@ -1,4 +1,4 @@
-package entities;
+package models;
 
 public class Album {
 	
@@ -50,7 +50,8 @@ public class Album {
 
 
 	public String toString() {
-		return "\n\nALBUM : " + nomeAlbum + "\n\nANO DE LANCAMENTO : " + anoLancamento + "\n\nQUANTIDADE DE MUSICAS : " + qtdMusicas;
+		return "\n\nALBUM : " + nomeAlbum + "\n\nANO DE LANCAMENTO : " 
+				+ anoLancamento + "\n\nQUANTIDADE DE MUSICAS : " + qtdMusicas;
 	}
 	
 	

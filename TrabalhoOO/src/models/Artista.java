@@ -1,4 +1,4 @@
-package entities;
+package models;
 
 import java.util.*;
 
@@ -26,7 +26,9 @@ public class Artista extends Pessoa {
 	}
 
 	public String toString() {
-		return "LISTA DE MUSICAS ADICIONADAS : " + ListaMusicas + "\n\nNOME ARTISTA OU BANDA : " + getNome() + "\n\nIDADE ARTISTA(S) : " + getIdade() + "\n\nNACIONALIDADE ARTISTA OU BANDA : " + getNacionalidade();
+		return "LISTA DE MUSICAS ADICIONADAS : " + ListaMusicas + "\n\nNOME ARTISTA OU BANDA : " 
+				+ getNome() + "\n\nIDADE ARTISTA(S) : " + getIdade() + "\n\nNACIONALIDADE ARTISTA OU BANDA : " 
+				+ getNacionalidade();
 	 }
 	}
 

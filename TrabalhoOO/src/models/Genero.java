@@ -1,4 +1,4 @@
-package entities;
+package models;
 
 public enum Genero {
 	rock(0), pop(1), rap(2), trap(3), funk(4), jazz(5), MPB(6), Forro(7);

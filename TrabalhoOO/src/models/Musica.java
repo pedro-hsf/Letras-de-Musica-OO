@@ -1,4 +1,4 @@
-package entities;
+package models;
 
 public class Musica {
 	
@@ -62,7 +62,8 @@ public class Musica {
 
 	
 	public String toString() {
-		return "\n\nNOME : " + nomeMusica + "\n\nANO DE LANCAMENTO DA MUSICA : " + ano + "\n\nTEMPO DE DURACAO : " + duracao + "\n\nALBUM : " + album
+		return "\n\nNOME : " + nomeMusica + "\n\nANO DE LANCAMENTO DA MUSICA : " + ano 
+				+ "\n\nTEMPO DE DURACAO : " + duracao + "\n\nALBUM : " + album
 				+ "\n\nGENERO : " + genero;
 	}
 	

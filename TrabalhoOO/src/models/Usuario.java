@@ -1,4 +1,4 @@
-package entities;
+package models;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +25,8 @@ public class Usuario extends Pessoa {
 	}
 
 	public String toString() {
-		return "\n\nFAVORITAS : "  + favoritos + "\n\nNOME USUARIO : " + getNome() + "\n\nIDADE USUARIO : "  + getIdade()
+		return "\n\nFAVORITAS : "  + favoritos + "\n\nNOME USUARIO : " + getNome() 
+		+ "\n\nIDADE USUARIO : "  + getIdade()
 		+ "\n\nNACIONALIDADE USUARIO : " + getNacionalidade();
 	}
 	

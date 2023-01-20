@@ -1,18 +1,18 @@
-package entities;
+package models;
 
-public class PlaylistPessoal {
+public class Playlist {
 	
 	private String nomePLaylist;
 	private int qtdMusicas;
 	private String MusicasFav;
 	
-	public PlaylistPessoal(String nomePLaylist, int qtdMusicas, String musicasFav) {
+	public Playlist(String nomePLaylist, int qtdMusicas, String musicasFav) {
 		this.nomePLaylist = nomePLaylist;
 		this.qtdMusicas = qtdMusicas;
 		MusicasFav = musicasFav;
 	}
 	
-	public PlaylistPessoal() {		
+	public Playlist() {		
 	}
 
 	public String getNomePLaylist() {

@@ -1,6 +1,7 @@
 package application;
-import entities.*;
-import java.util.ArrayList; 
+import java.util.ArrayList;
+
+import models.*; 
 public class Program {
 
 	public static void main(String[] args) {
@@ -72,7 +73,7 @@ public class Program {
 	   		+ "Used to dream of outer space, but now they're laughing at our face\r\n"
 	   		+ "Saying: Wake up, you need to make money, yeah" );
 	   Musica musica = new Musica("Stressed Out", 2015, "3:45", "BlurryFace", Genero.pop);
-	   PlaylistPessoal playlist = new PlaylistPessoal("Playlist do Nick", 1, "Stressed out");
+	   Playlist playlist = new Playlist("Playlist do Nick", 1, "Stressed out");
 	   Usuario usuario = new Usuario("Nicolas", 19, "Brasileiro", favoritos);
 	   
 	   
