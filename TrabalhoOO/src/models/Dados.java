@@ -1,107 +1,94 @@
 package models;
 
 public class Dados {
-	private Musica[] musica = new Musica[10];
-	private int qtdMusica = 0;
-	private Artista[] artista = new Artista[10];
-	private int qtdArtista = 0;
-	private Playlist[] playlist = new Playlist[10];
-	private int qtdPlaylist = 0;
-	private Usuario[] usuario = new Usuario[10];
-	private int qtdUsuario = 0;
-	
-	public void preencher() {
-		for(int i = 0; i < 5; i++) {
-			musica[i] = new Musica("Música"+i);
-			artista[i] = new Artista("Artista"+i);
-			playlist[i] = new Playlist("Playlist"+i);
-			usuario[i] = new Usuario("Usúario"+i);
-		}
-		
-		qtdMusica = 5;
-		qtdArtista = 5;
-		qtdPlaylist = 5;
-		qtdUsuario = 5;
-	}
+	private Usuario[] usuarios = new Usuario[10];
+	private int qtdUsuarios = 0;
+	private Musica[] musicas = new Musica[10];
+	private int qtdMusicas = 0;
+	private Letra[] letras = new Letra[10];
+	private int qtdLetras = 0;
+    private Artista[] artistas = new Artista[10];
+    private int qtdArtistas = 0;
+    private Playlist[] playlist = new Playlist[10];
+    private int qtdPlaylists = 0;
 
-	public Musica[] getMusica() {
-		return musica;
-	}
+    public Usuario[] getUsuarios() {
+    	return usuarios;
+    }
+    
+    public void setUsuarios(Usuario[] usuarios) {
+    	this.usuarios = usuarios;
+    }
+    
+    public int getQtdUsuarios() {
+    	return qtdUsuarios;
+    }
+    
+    public void setQtdUsuarios(int qtdUsuarios) {
+    	this.qtdUsuarios = qtdUsuarios;
+    }
+    
+    public Musica[] getMusicas() {
+        return musicas;
+    }
 
-	public void setMusica(Musica[] musica) {
-		this.musica = musica;
-	}
-	
-	public void inserirEditarMusica(Musica m, int pos) {
-		this.musica[pos] = m;
-		if(pos == qtdMusica) qtdMusica++;
-	}
+    public void setMusicas(Musica[] musicas) {
+        this.musicas = musicas;
+    }
 
-	public int getQtdMusica() {
-		return qtdMusica;
-	}
+    public int getQtdMusicas() {
+        return qtdMusicas;
+    }
 
-	public void setQtdMusica(int qtdMusica) {
-		this.qtdMusica = qtdMusica;
-	}
+    public void setQtdMusicas(int qtdMusicas) {
+        this.qtdMusicas = qtdMusicas;
+    }
 
-	public Artista[] getArtista() {
-		return artista;
-	}
+    public Letra[] getLetras() {
+        return letras;
+    }
 
-	public void setArtista(Artista[] artista) {
-		this.artista = artista;
-	}
-	
-	public void inserirEditarArtista(Artista a, int pos) {
-		this.artista[pos] = a;
-		if(pos == qtdArtista) qtdArtista++;
-	}
+    public void setLetras(Letra[] letras) {
+        this.letras = letras;
+    }
 
-	public int getQtdArtista() {
-		return qtdArtista;
-	}
+    public int getQtdLetras() {
+        return qtdLetras;
+    }
 
-	public void setQtdArtista(int qtdArtista) {
-		this.qtdArtista = qtdArtista;
-	}
+    public void setQtdLetras(int qtdLetras) {
+        this.qtdLetras = qtdLetras;
+    }
+    
+    public Artista[] getArtistas() {
+    	return artistas;
+    }
+    
+    public void setArtistas(Artista[] artistas) {
+    	this.artistas = artistas;
+    }
+    
+    public int getQtdArtistas() {
+    	return qtdArtistas;
+    }
+    
+    public void setQtdArtistas(int qtdArtistas) {
+    	this.qtdArtistas = qtdArtistas;
+    }
 
-	public Playlist[] getPlaylist() {
-		return playlist;
-	}
+    public Playlist[] getPlaylists() {
+        return playlist;
+    }
 
-	public void setPlaylist(Playlist[] playlist) {
-		this.playlist = playlist;
-	}
+    public void setPlaylists(Playlist[] playlists) {
+        this.playlist = playlists;
+    }
 
-	public int getQtdPlaylist() {
-		return qtdPlaylist;
-	}
+    public int getQtdPlaylists() {
+        return qtdPlaylists;
+    }
 
-	public void setQtdPlaylist(int qtdPlaylist) {
-		this.qtdPlaylist = qtdPlaylist;
-	}
-
-	public Usuario[] getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario[] usuario) {
-		this.usuario = usuario;
-	}
-
-	public int getQtdUsuario() {
-		return qtdUsuario;
-	}
-	
-	public void inserirEditarUsuario(Usuario u, int pos) {
-		this.usuario[pos] = u;
-		if(pos == qtdUsuario) qtdUsuario++;
-	}
-
-	public void setQtdUsuario(int qtdUsuario) {
-		this.qtdUsuario = qtdUsuario;
-	}
-	
-	
+    public void setQtdPlaylists(int qtdPlaylists) {
+        this.qtdPlaylists = qtdPlaylists;
+    }
 }
