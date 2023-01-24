@@ -1,14 +1,8 @@
 package view;
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 //import enumerators.Generos;
 
 public class TelaCadastro implements ActionListener {
@@ -136,7 +130,7 @@ public class TelaCadastro implements ActionListener {
 			}
 		}
 		else if ("voltar" == ae.getActionCommand()) {
-			new TelaArtista();
+			new TelaInicial();
 			frame.dispose();
 		}
 	}

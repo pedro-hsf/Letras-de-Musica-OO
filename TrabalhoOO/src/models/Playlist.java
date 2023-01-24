@@ -1,15 +1,18 @@
 package models;
 
+import java.util.*;
+
 public class Playlist {
+
+	private ArrayList<String> ListaMusicas;
 	
 	private String nomePLaylist;
-	private int qtdMusicas;
-	private String MusicasFav;
+	private int ano;
 	
-	public Playlist(String nomePLaylist, int qtdMusicas, String musicasFav) {
+	public Playlist(String nomePLaylist, int ano, ArrayList<String> listaMusicas) {
 		this.nomePLaylist = nomePLaylist;
-		this.qtdMusicas = qtdMusicas;
-		MusicasFav = musicasFav;
+		this.ano = ano;
+		ListaMusicas = listaMusicas;
 	}
 	
 	public Playlist() {		
@@ -23,29 +26,19 @@ public class Playlist {
 		this.nomePLaylist = nomePLaylist;
 	}
 
-	public int getQtdMusicas() {
-		return qtdMusicas;
+	public int getano() {
+		return ano;
 	}
 
-	public void setQtdMusicas(int qtdMusicas) {
-		this.qtdMusicas = qtdMusicas;
+	public void setano(int ano) {
+		this.ano = ano;
 	}
 
-	public String getMusicasFav() {
-		return MusicasFav;
-	}
-
-	public void setMusicasFav(String musicasFav) {
-		MusicasFav = musicasFav;
-	}
-
-	public String toString() {
+	/*public String toString() {
 		return "\n\nNOME DA PLAYLIST : " + nomePLaylist 
 				+ "\n\nQUANTIDADE DE MUSICAS NA PLAYLIST : " 
-				+ qtdMusicas 
+				+ ano 
 				+ "\n\nMUSICAS FAVORITADAS : "
 				+ MusicasFav;
-	}
-
+	}*/
 }
-

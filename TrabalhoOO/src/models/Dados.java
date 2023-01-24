@@ -1,7 +1,7 @@
 package models;
 
 public class Dados {
-	private Usuario[] usuarios = new Usuario[10];
+	//private Usuario[] usuarios = new Usuario[10];
 	private int qtdUsuarios = 0;
 	private Musica[] musicas = new Musica[10];
 	private int qtdMusicas = 0;
@@ -11,14 +11,15 @@ public class Dados {
     private int qtdArtistas = 0;
     private Playlist[] playlist = new Playlist[10];
     private int qtdPlaylists = 0;
+    private Genero[] genero = new Genero[10];
 
-    public Usuario[] getUsuarios() {
+    /*public Usuario[] getUsuarios() {
     	return usuarios;
     }
     
     public void setUsuarios(Usuario[] usuarios) {
     	this.usuarios = usuarios;
-    }
+    }*/
     
     public int getQtdUsuarios() {
     	return qtdUsuarios;
@@ -27,6 +28,14 @@ public class Dados {
     public void setQtdUsuarios(int qtdUsuarios) {
     	this.qtdUsuarios = qtdUsuarios;
     }
+
+    public Genero[] getGenero() {
+        return genero;
+    }
+
+    //public void setGenero(Genero[] Genero) {
+    //    this.Genero = Genero;
+    //}
     
     public Musica[] getMusicas() {
         return musicas;
@@ -35,6 +44,11 @@ public class Dados {
     public void setMusicas(Musica[] musicas) {
         this.musicas = musicas;
     }
+
+    public void inserirEditaMusica(Musica p, int pos) {
+		this.musicas[pos] = p;
+		if(pos == qtdMusicas) qtdMusicas++;
+	}
 
     public int getQtdMusicas() {
         return qtdMusicas;
@@ -67,6 +81,11 @@ public class Dados {
     public void setArtistas(Artista[] artistas) {
     	this.artistas = artistas;
     }
+
+    public void inserirEditarArtista(Artista a, int pos) {
+		this.artistas[pos] = a;
+		if(pos == qtdArtistas) qtdArtistas++;
+	}
     
     public int getQtdArtistas() {
     	return qtdArtistas;

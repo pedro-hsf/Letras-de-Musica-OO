@@ -2,19 +2,19 @@ package models;
 
 public abstract class Pessoa {
 	
-	private String nome;
-	private int idade;
-	private String nacionalidade;
+	protected String nome;
+	protected int idade;
+	protected String nacionalidade;
+
+	public Pessoa() { 
+		super();
+	}
 	
-	public Pessoa(String nome, int idade, String nacionalidade) {
+	/*public Pessoa(String nome, int idade, String nacionalidade) {
 		this.nome = nome;
 		this.idade = idade;
 		this.nacionalidade = nacionalidade;
-	}
-	
-	public Pessoa() { 
-		
-	}
+	}*/
 
 	public String getNome() {
 		return nome;
@@ -40,10 +40,8 @@ public abstract class Pessoa {
 		this.nacionalidade = nacionalidade;
 	}
 
-	public String toString() {
+	/*public String toString() {
 		return "Pessoa [nome=" + nome + ", idade=" + idade + ", nacionalidade=" + nacionalidade + "]";
-	}
-	
-	
+	}*/
 	
 }

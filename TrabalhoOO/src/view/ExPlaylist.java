@@ -1,13 +1,9 @@
 package view;
-import java.awt.Color;
-import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionListener;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
 
 public class ExPlaylist implements ListSelectionListener, ActionListener{
 	private static JFrame frame;
@@ -74,6 +70,18 @@ public class ExPlaylist implements ListSelectionListener, ActionListener{
 	public static void main(String[] args) {
 		ExPlaylist exemplo = new ExPlaylist();
 		lista.addListSelectionListener(exemplo);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// 
+		
+	}
+
+	@Override
+	public void valueChanged(ListSelectionEvent e) {
+		// 
+		
 	}
 	
 	/*public void valueChanged(ListSelectionEvent le) {

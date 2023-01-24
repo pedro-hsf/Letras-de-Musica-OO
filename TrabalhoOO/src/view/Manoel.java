@@ -1,19 +1,11 @@
 package view;
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
 
 //import project.Tela3.AddArtista.String valorNome;
-
 
 public class Manoel implements ListSelectionListener, ActionListener{
 	private static JFrame frame;
@@ -119,6 +111,18 @@ public class Manoel implements ListSelectionListener, ActionListener{
 			new AddPlaylist();
 			frame.dispose();
 		}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// 
+		
+	}
+
+	@Override
+	public void valueChanged(ListSelectionEvent e) {
+		// 
+		
 	}
 	
 }
