@@ -16,7 +16,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	private JButton cadastroPlaylist;
 	private JButton refreshPlaylist;
 
-	private JButton botaoVoltar = new JButton("Voltar");
+	//private JButton botaoVoltar = new JButton("Voltar");
 
 	private static ControleDados dados;
 	private JList<String> listaArtistasCadastrados;
@@ -44,7 +44,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
 			cadastroArtista.setBounds(70, 177, 100, 30);
 			refreshArtista.setBounds(200, 177, 100, 30);
-			botaoVoltar.setBounds(10, 177, 100, 30);
+			//botaoVoltar.setBounds(10, 177, 100, 30);
 
 			janela.setLayout(null);
 
@@ -52,14 +52,14 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			janela.add(listaArtistasCadastrados);
 			janela.add(cadastroArtista);
 			janela.add(refreshArtista);
-			janela.add(botaoVoltar);
+			//janela.add(botaoVoltar);
 
 			janela.setSize(400, 250);
 			janela.setVisible(true);
 
 			cadastroArtista.addActionListener(this);
 			refreshArtista.addActionListener(this);
-			botaoVoltar.addActionListener(this);
+			//botaoVoltar.addActionListener(this);
 			listaArtistasCadastrados.addListSelectionListener(this);
 
 			break;
@@ -172,10 +172,10 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			listaPlaylistsCadastrados.updateUI();
 		}
 
-		if(src == botaoVoltar) {
-			new TelaInicial();
-			janela.dispose();
-		}
+		//if(src == botaoVoltar) {
+		//	new TelaInicial();
+		//	janela.dispose();
+		//}
 	}
 
 	//Captura eventos relacionados ao JList

@@ -4,41 +4,41 @@ import java.util.*;
 
 public class Playlist {
 
-	private ArrayList<String> ListaMusicas;
+	private ArrayList<String> listaMusicas;
 	
-	private String nomePLaylist;
+	private String nomePlaylist;
 	private int ano;
 	
 	public Playlist(String nomePLaylist, int ano, ArrayList<String> listaMusicas) {
-		this.nomePLaylist = nomePLaylist;
+		this.nomePlaylist = nomePLaylist;
 		this.ano = ano;
-		ListaMusicas = listaMusicas;
+		this.listaMusicas = listaMusicas;
 	}
 	
-	public Playlist() {		
+	public Playlist() {
 	}
 
-	public String getNomePLaylist() {
-		return nomePLaylist;
+	public String getNomePlaylist() {
+		return nomePlaylist;
 	}
 
 	public void setNomePLaylist(String nomePLaylist) {
-		this.nomePLaylist = nomePLaylist;
+		this.nomePlaylist = nomePLaylist;
 	}
 
-	public int getano() {
+	public int getAno() {
 		return ano;
 	}
 
-	public void setano(int ano) {
+	public void setAno(int ano) {
 		this.ano = ano;
 	}
 
-	/*public String toString() {
-		return "\n\nNOME DA PLAYLIST : " + nomePLaylist 
-				+ "\n\nQUANTIDADE DE MUSICAS NA PLAYLIST : " 
-				+ ano 
-				+ "\n\nMUSICAS FAVORITADAS : "
-				+ MusicasFav;
-	}*/
+	public ArrayList<String> getListaMusicas() {
+		return listaMusicas;
+	}
+
+	public void setListaMusicas(ArrayList<String> listaMusicas) {
+		this.listaMusicas = listaMusicas;
+	}
 }

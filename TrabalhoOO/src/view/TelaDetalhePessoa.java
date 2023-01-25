@@ -126,7 +126,7 @@ public class TelaDetalhePessoa implements ActionListener {
 
 		this.janela.setLayout(null);
 
-		this.janela.setSize(400, 250);
+		this.janela.setSize(500, 600);
 		this.janela.setVisible(true);
 
 		botaoSalvar.addActionListener(this);
@@ -138,7 +138,7 @@ public class TelaDetalhePessoa implements ActionListener {
 		Object src = e.getSource();
 		if(src == botaoSalvar) {
 			try {
-				boolean res;
+				boolean res=true;
 				if(opcao == 1) //Adicionar novo Artista
 					novoDado[0] = Integer.toString(dados.getQtdArtistas());
 				else if (opcao == 2) // Adicionar nova musica
@@ -149,11 +149,13 @@ public class TelaDetalhePessoa implements ActionListener {
 					novoDado[0] = Integer.toString(posicao);
 
 				if (opcao == 1 || opcao == 4) {
+					//res=false;
 					novoDado[1] =  valorNome.getText();
                 	novoDado[2] =  valorIda.getText();
                 	novoDado[3] =  valorNac.getText();
 					res = dados.inserirEditarArtista(novoDado);
 				} else if (opcao == 2 || opcao == 5) {
+					//res=false;
 					novoDado[1] =  valorNomeMusica.getText();
                 	novoDado[2] =  valorAno.getText();
                 	novoDado[3] =  valorDuracao.getText();
@@ -162,10 +164,10 @@ public class TelaDetalhePessoa implements ActionListener {
 					res = dados.inserirEditarProf(novoDado);
 				}*/
 
-				/*if(res) {
+				if(res) {
 					mensagemSucessoCadastro();
 				}
-				else mensagemErroCadastro();*/
+				else mensagemErroCadastro();
 
 			} catch (NullPointerException exc1) {
 				mensagemErroCadastro();

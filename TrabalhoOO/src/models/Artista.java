@@ -4,20 +4,20 @@ import java.util.*;
 
 public class Artista extends Pessoa {
 	
-	private ArrayList<String> ListaMusicas;
+	//private ArrayList<String> ListaMusicas;
 
 	public Artista(){
 		super();
 	}
 
-	public Artista(String n, int ida, String nac, ArrayList<String> listaMusicas) {
+	public Artista(String n, int ida, String nac) {
 		nome = n;
 		this.idade = ida;
 		nacionalidade = nac;
-		ListaMusicas = listaMusicas;
+		//ListaMusicas = listaMusicas;
 	}	
 
-	public ArrayList<String> getListaMusicas() {
+	/*public ArrayList<String> getListaMusicas() {
 		return ListaMusicas;
 	}
 
@@ -39,14 +39,6 @@ public class Artista extends Pessoa {
 		this.nome = nome;
 	}
 
-	public String getNacionalidade() {
-		return nacionalidade;
-	}
-
-	public void setNacionalidade(String nacionalidade) {
-		this.nacionalidade = nacionalidade;
-	}
-
 	public int getIdade() {
 		return idade;
 	}
@@ -55,6 +47,13 @@ public class Artista extends Pessoa {
 		this.idade = idade;
 	}
 
+	public String getNacionalidade() {
+		return nacionalidade;
+	}
+
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
+	}
 }
 
 	

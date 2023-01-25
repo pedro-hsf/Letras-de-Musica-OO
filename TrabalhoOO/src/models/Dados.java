@@ -45,8 +45,8 @@ public class Dados {
         this.musicas = musicas;
     }
 
-    public void inserirEditaMusica(Musica p, int pos) {
-		this.musicas[pos] = p;
+    public void inserirEditaMusica(Musica m, int pos) {
+		this.musicas[pos] = m;
 		if(pos == qtdMusicas) qtdMusicas++;
 	}
 
@@ -106,6 +106,11 @@ public class Dados {
     public int getQtdPlaylists() {
         return qtdPlaylists;
     }
+
+    public void inserirEditarPlaylist(Playlist p, int pos) {
+		this.playlist[pos] = p;
+		if(pos == qtdPlaylists) qtdPlaylists++;
+	}
 
     public void setQtdPlaylists(int qtdPlaylists) {
         this.qtdPlaylists = qtdPlaylists;

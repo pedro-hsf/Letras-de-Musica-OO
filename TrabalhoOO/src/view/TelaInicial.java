@@ -9,7 +9,6 @@ import javax.swing.*;
 import controller.*;
 import models.*;
 
-
 public class TelaInicial implements ActionListener{
 	private static JFrame frame;
 	private static JButton botaoMusica;
@@ -116,10 +115,10 @@ public class TelaInicial implements ActionListener{
 		if(src == botaoMusica)
 			new TelaPessoa().mostrarDados(dados, 2);
 			
-		//if(src == botaoPlaylist)
-			//new TelaPessoa().mostrarDados(dados, 3);
+		if(src == botaoPlaylist)
+			new TelaPessoa().mostrarDados(dados, 3);
 		
-		//if(src == botaoUsuario)
-			//new TelaPessoa().mostrarDados(dados, 4);
+		if(src == botaoUsuario)
+			new TelaPessoa().mostrarDados(dados, 4);
 	}
 }

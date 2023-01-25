@@ -5,13 +5,13 @@ public class Musica {
 	private String nomeMusica;
 	private int ano;
 	private String duracao;
-	private Genero genero;
+	//private Genero genero;
 	
-	public Musica(String nomeMusica, int ano, String duracao, Genero genero) {
+	public Musica(String nomeMusica, int ano, String duracao) {
 		this.nomeMusica = nomeMusica;
 		this.ano = ano;
 		this.duracao = duracao;
-		this.genero = genero;
+		//this.genero = genero;
 	}
 	
 	public Musica() {
@@ -42,7 +42,7 @@ public class Musica {
 		this.duracao = duracao;
 	}
 
-	public Genero getGenero() {
+	/*public Genero getGenero() {
 		return genero;
 	}
 

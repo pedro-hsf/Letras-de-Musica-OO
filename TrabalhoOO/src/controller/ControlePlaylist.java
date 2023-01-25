@@ -32,13 +32,9 @@ public class ControlePlaylist {
 		return a[i].getNomePlaylist();
 	}
 	
-	public String getIdade(int i) {
-		String idade = String.valueOf(a[i].getIdade());
-		return idade;
-	}
-
-    public String getNacionalidade(int i) {		
-		return a[i].getNacionalidade();
+	public String getAno(int i) {
+		String ano = String.valueOf(a[i].getAno());
+		return ano;
 	}
 	
 	public void setQtdPlaylists(int qtdPlaylists) {
