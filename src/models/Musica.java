@@ -2,13 +2,13 @@ package models;
 
 public class Musica {
 	
-	private String nomeMusica;
+	private String nomM;
 	private int ano;
 	private String duracao;
 	//private Genero genero;
 	
-	public Musica(String nomeMusica, int ano, String duracao) {
-		this.nomeMusica = nomeMusica;
+	public Musica(String nomM, int ano, String duracao) {
+		this.nomM = nomM;
 		this.ano = ano;
 		this.duracao = duracao;
 		//this.genero = genero;
@@ -18,12 +18,12 @@ public class Musica {
 		
 	}
 
-	public String getNomeMusica() {
-		return nomeMusica;
+	public String getNomM() {
+		return nomM;
 	}
 
-	public void setNomeMusica(String nomeMusica) {
-		this.nomeMusica = nomeMusica;
+	public void setNomM(String nomM) {
+		this.nomM = nomM;
 	}
 
 	public int getAno() {
@@ -51,7 +51,7 @@ public class Musica {
 	}
 	
 	/*public String toString() {
-		return "\n\nNOME : " + nomeMusica + "\n\nANO DE LANCAMENTO DA MUSICA : " + ano 
+		return "\n\nNOME : " + nomM + "\n\nANO DE LANCAMENTO DA MUSICA : " + ano 
 				+ "\n\nTEMPO DE DURACAO : " + duracao + "\n\nALBUM : " + album
 				+ "\n\nGENERO : " + genero;
 	}*/
