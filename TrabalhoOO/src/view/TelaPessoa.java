@@ -36,17 +36,28 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			cadastroArtista = new JButton("Cadastrar");
 			refreshArtista = new JButton("Carregar");
 
+			titulo.setForeground(new Color(160, 75, 209, 255));
+			listaArtistasCadastrados.setBackground(new Color(255, 255, 255, 255));
+			//listaArtistasCadastrados.setForeground(new Color(160, 75, 209, 255));
+
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(90, 10, 250, 30);
-			listaArtistasCadastrados.setBounds(20, 50, 350, 120);
+			titulo.setBounds(190, 10, 250, 30);
+			listaArtistasCadastrados.setBounds(20, 50, 470, 300);
 			listaArtistasCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaArtistasCadastrados.setVisibleRowCount(10);
 
-			cadastroArtista.setBounds(70, 177, 100, 30);
-			refreshArtista.setBounds(200, 177, 100, 30);
+			cadastroArtista.setBackground(new Color(160, 75, 209, 255));
+			refreshArtista.setBackground(new Color(160, 75, 209, 255));
+			cadastroArtista.setBounds(120, 380, 100, 30);
+			refreshArtista.setBounds(250, 380, 100, 30);
 			//botaoVoltar.setBounds(10, 177, 100, 30);
 
 			janela.setLayout(null);
+
+			janela.setSize(525, 600);
+			//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			janela.setLocationRelativeTo(null);
+			janela.getContentPane().setBackground(new java.awt.Color(33,33,33,255));
 
 			janela.add(titulo);
 			janela.add(listaArtistasCadastrados);
@@ -54,7 +65,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			janela.add(refreshArtista);
 			//janela.add(botaoVoltar);
 
-			janela.setSize(400, 250);
+			//janela.setSize(400, 250);
 			janela.setVisible(true);
 
 			cadastroArtista.addActionListener(this);
@@ -65,31 +76,40 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			break;
 
 		case 2:// Mostrar dados de musicas cadastrados (JList)
-			listaNomes = new ControleMusica(dados).getNomeMusica();
+			listaNomes = new ControleMusica(dados).getNomM();
 			listaMusicasCadastrados = new JList<String>(listaNomes);
 			janela = new JFrame("Músicas");
 			titulo = new JLabel("Músicas");
 			cadastroMusica = new JButton("Cadastrar");
 			refreshMusica = new JButton("Carregar");
 
+			titulo.setForeground(new Color(160, 75, 209, 255));
+			listaMusicasCadastrados.setBackground(new Color(255, 255, 255, 255));
+
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(90, 10, 250, 30);
-			listaMusicasCadastrados.setBounds(20, 50, 350, 120);
+			titulo.setBounds(190, 10, 250, 30);
+			listaMusicasCadastrados.setBounds(20, 50, 470, 300);
 			listaMusicasCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaMusicasCadastrados.setVisibleRowCount(10);
 
-
-			cadastroMusica.setBounds(70, 177, 100, 30);
-			refreshMusica.setBounds(200, 177, 100, 30);
+			cadastroMusica.setBackground(new Color(160, 75, 209, 255));
+			refreshMusica.setBackground(new Color(160, 75, 209, 255));
+			cadastroMusica.setBounds(120, 380, 100, 30);
+			refreshMusica.setBounds(250, 380, 100, 30);
 
 			janela.setLayout(null);
+
+			janela.setSize(525, 600);
+			//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			janela.setLocationRelativeTo(null);
+			janela.getContentPane().setBackground(new java.awt.Color(33,33,33,255));
 
 			janela.add(titulo);
 			janela.add(listaMusicasCadastrados);
 			janela.add(cadastroMusica);
 			janela.add(refreshMusica);
 
-			janela.setSize(400, 250);
+			//janela.setSize(400, 250);
 			janela.setVisible(true);
 
 			cadastroMusica.addActionListener(this);
@@ -102,28 +122,37 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			listaNomes = new ControlePlaylist(dados).getNomePlaylist();
 			listaPlaylistsCadastrados = new JList<String>(listaNomes);
 			janela = new JFrame("Playlists");
-			titulo = new JLabel("Playlists Cadastrados");
+			titulo = new JLabel("Playlists");
 			cadastroPlaylist = new JButton("Cadastrar");
 			refreshPlaylist = new JButton("Carregar");
 
+			titulo.setForeground(new Color(160, 75, 209, 255));
+			listaPlaylistsCadastrados.setBackground(new Color(255, 255, 255, 255));
+
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(90, 10, 250, 30);
-			listaPlaylistsCadastrados.setBounds(20, 50, 350, 120);
+			titulo.setBounds(190, 10, 250, 30);
+			listaPlaylistsCadastrados.setBounds(20, 50, 470, 300);
 			listaPlaylistsCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaPlaylistsCadastrados.setVisibleRowCount(10);
 
-
-			cadastroPlaylist.setBounds(70, 177, 100, 30);
-			refreshPlaylist.setBounds(200, 177, 100, 30);
+			cadastroPlaylist.setBackground(new Color(160, 75, 209, 255));
+			refreshPlaylist.setBackground(new Color(160, 75, 209, 255));
+			cadastroPlaylist.setBounds(120, 380, 100, 30);
+			refreshPlaylist.setBounds(250, 380, 100, 30);
 
 			janela.setLayout(null);
+
+			janela.setSize(525, 600);
+			//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			janela.setLocationRelativeTo(null);
+			janela.getContentPane().setBackground(new java.awt.Color(33,33,33,255));
 
 			janela.add(titulo);
 			janela.add(listaPlaylistsCadastrados);
 			janela.add(cadastroPlaylist);
 			janela.add(refreshPlaylist);
 
-			janela.setSize(400, 250);
+			//janela.setSize(400, 250);
 			janela.setVisible(true);
 
 			cadastroPlaylist.addActionListener(this);
@@ -133,7 +162,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			break;
 
 		default:
-			JOptionPane.showMessageDialog(null,"Op��o n�o encontrada!", null, 
+			JOptionPane.showMessageDialog(null,"Opção não encontrada", null, 
 					JOptionPane.ERROR_MESSAGE);
 		}
 	}
@@ -162,7 +191,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
 		// Atualiza a lista de nomes de Musica mostrada no JList
 		if(src == refreshMusica) {
-			listaMusicasCadastrados.setListData(new ControleMusica(dados).getNomeMusica());
+			listaMusicasCadastrados.setListData(new ControleMusica(dados).getNomM());
 			listaMusicasCadastrados.updateUI();
 		}
 

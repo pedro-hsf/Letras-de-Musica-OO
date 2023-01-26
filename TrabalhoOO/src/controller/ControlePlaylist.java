@@ -3,18 +3,18 @@ package controller;
 import models.*;
 
 public class ControlePlaylist {
-	private Playlist[] a;
+	private Playlist[] p;
 	private int qtdPlaylists;
 	
 	public ControlePlaylist(ControleDados d) {
-		a = d.getPlaylists();
+		p = d.getPlaylists();
 		qtdPlaylists = d.getQtdPlaylists();
 	}
 	
 	public String[] getNomePlaylist() {
 		String[] s = new String[qtdPlaylists];
 		for(int i = 0; i < qtdPlaylists; i++) {
-			s[i] = a[i].getNomePlaylist();
+			s[i] = p[i].getNomePlaylist();
 		}
 		
 		return s;
@@ -29,12 +29,12 @@ public class ControlePlaylist {
 	}
 	
 	public String getNomePlaylist(int i) {		
-		return a[i].getNomePlaylist();
+		return p[i].getNomePlaylist();
 	}
 	
-	public String getAno(int i) {
-		String ano = String.valueOf(a[i].getAno());
-		return ano;
+	public String getAnoPlaylist(int i) {
+		String anoPlaylist = String.valueOf(p[i].getAnoPlaylist());
+		return anoPlaylist;
 	}
 	
 	public void setQtdPlaylists(int qtdPlaylists) {

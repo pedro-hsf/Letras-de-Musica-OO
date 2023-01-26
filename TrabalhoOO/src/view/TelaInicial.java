@@ -7,7 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import controller.*;
-import models.*;
+//import models.*;
 
 public class TelaInicial implements ActionListener{
 	private static JFrame frame;

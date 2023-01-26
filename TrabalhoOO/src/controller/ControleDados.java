@@ -1,6 +1,6 @@
 package controller;
 
-import java.util.*;
+//import java.util.*;
 import models.*;
 
 public class ControleDados {
@@ -43,8 +43,8 @@ public class ControleDados {
 	
 	// a posicao 0 do vetor dadosArtistas indica onde os dados devem ser inseridos
 	public boolean inserirEditarArtista(String[] dadosArtistas) {
-		Artista a = new Artista(dadosArtistas[1], Integer.parseInt(dadosArtistas[2]), dadosArtistas[3]);
-		//, dadosArtistas[4]));
+		Artista a = new Artista(dadosArtistas[1], Integer.parseInt(dadosArtistas[2]), dadosArtistas[3]
+		, dadosArtistas[4]);
 		//, ArrayList(dadosArtistas[4]));
 		d.inserirEditarArtista(a, Integer.parseInt(dadosArtistas[0]));
 		return true;
@@ -59,8 +59,8 @@ public class ControleDados {
 	}
 
 	public boolean inserirEditarPlaylist(String[] dadosPlaylist) {
-		Playlist p = new Playlist(dadosPlaylist[1], Integer.parseInt(dadosPlaylist[2])
-		, ArrayList(dadosPlaylist[3]));
+		Playlist p = new Playlist(dadosPlaylist[1], Integer.parseInt(dadosPlaylist[2]));
+		//, ArrayList(dadosPlaylist[3]));
 		d.inserirEditarPlaylist(p, Integer.parseInt(dadosPlaylist[0]));
 		return true;
 	}
@@ -89,7 +89,7 @@ public class ControleDados {
 	}
 
 	public boolean removerMusica(int i) {
-		String MusicaRemovido = d.getMusicas()[i].getNomeMusica();
+		String MusicaRemovido = d.getMusicas()[i].getNomM();
 
 		if(i == (d.getQtdMusicas() - 1)) { // O Musica a ser removido est� no final do array
 			d.setQtdMusicas(d.getQtdMusicas() - 1);
@@ -97,7 +97,7 @@ public class ControleDados {
 			return true;
 		} else { // o Musica a ser removido est� no meio do array
 			int cont = 0;
-			while(d.getMusicas()[cont].getNomeMusica().compareTo(MusicaRemovido) != 0)
+			while(d.getMusicas()[cont].getNomM().compareTo(MusicaRemovido) != 0)
 				cont++;
 			//Rotina swap
 			for(int j = cont; j < d.getQtdMusicas() - 1; j++) {
@@ -106,6 +106,29 @@ public class ControleDados {
 			}
 			d.getMusicas()[d.getQtdMusicas()] = null;
 			d.setQtdMusicas(d.getQtdMusicas() - 1);
+			return true;
+		}
+	}
+
+	public boolean removerPlaylist(int i) {
+		String PlaylistRemovido = d.getPlaylists()[i].getNomePlaylist();
+		
+		if(i == (d.getQtdPlaylists() - 1)) { // O Playlist a ser removido est� no final do array
+			d.setQtdPlaylists(d.getQtdPlaylists() - 1);
+			d.getPlaylists()[d.getQtdPlaylists()] = null;
+			return true;
+		} else { // o Playlist a ser removido est� no meio do array
+			int cont = 0;
+			while(d.getPlaylists()[cont].getNomePlaylist().compareTo(PlaylistRemovido) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < d.getQtdPlaylists() - 1; j++) {
+				d.getPlaylists()[j] = null;
+				d.getPlaylists()[j] = d.getPlaylists()[j+1];
+			}
+			d.getPlaylists()[d.getQtdPlaylists()] = null;
+			d.setQtdPlaylists(d.getQtdPlaylists() - 1);
 			return true;
 		}
 	}

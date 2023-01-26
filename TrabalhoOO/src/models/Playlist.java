@@ -1,18 +1,18 @@
 package models;
 
-import java.util.*;
+//import java.util.*;
 
 public class Playlist {
 
-	private ArrayList<String> listaMusicas;
+	//private ArrayList<String> listaMusicas;
 	
 	private String nomePlaylist;
-	private int ano;
+	private int anoPlaylist;
 	
-	public Playlist(String nomePLaylist, int ano, ArrayList<String> listaMusicas) {
+	public Playlist(String nomePLaylist, int anoPlaylist) {
 		this.nomePlaylist = nomePLaylist;
-		this.ano = ano;
-		this.listaMusicas = listaMusicas;
+		this.anoPlaylist = anoPlaylist;
+		//this.listaMusicas = listaMusicas;
 	}
 	
 	public Playlist() {
@@ -26,19 +26,19 @@ public class Playlist {
 		this.nomePlaylist = nomePLaylist;
 	}
 
-	public int getAno() {
-		return ano;
+	public int getAnoPlaylist() {
+		return anoPlaylist;
 	}
 
-	public void setAno(int ano) {
-		this.ano = ano;
+	public void setAnoPlaylist(int anoPlaylist) {
+		this.anoPlaylist = anoPlaylist;
 	}
 
-	public ArrayList<String> getListaMusicas() {
+	/*public ArrayList<String> getListaMusicas() {
 		return listaMusicas;
 	}
 
 	public void setListaMusicas(ArrayList<String> listaMusicas) {
 		this.listaMusicas = listaMusicas;
-	}
+	}*/
 }

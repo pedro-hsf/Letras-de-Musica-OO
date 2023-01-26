@@ -1,19 +1,21 @@
 package models;
 
-import java.util.*;
+//import java.util.*;
 
 public class Artista extends Pessoa {
 	
 	//private ArrayList<String> ListaMusicas;
+	private String genero;
 
 	public Artista(){
 		super();
 	}
 
-	public Artista(String n, int ida, String nac) {
-		nome = n;
+	public Artista(String n, int ida, String nac, String gen) {
+		this.nome = n;
 		this.idade = ida;
-		nacionalidade = nac;
+		this.nacionalidade = nac;
+		this.genero = gen;
 		//ListaMusicas = listaMusicas;
 	}	
 
@@ -53,6 +55,14 @@ public class Artista extends Pessoa {
 
 	public void setNacionalidade(String nacionalidade) {
 		this.nacionalidade = nacionalidade;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 }
 
