@@ -36,10 +36,6 @@ public class ControleDados {
 	public Musica[] getMusicas() {
 		return this.d.getMusicas();
 	}
-
-	/*public Genero[] getGenero() {
-		return this.d.getGenero();
-	}*/
 	
 	// a posicao 0 do vetor dadosArtistas indica onde os dados devem ser inseridos
 	public boolean inserirEditarArtista(String[] dadosArtistas) {

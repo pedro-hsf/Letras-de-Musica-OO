@@ -16,8 +16,6 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	private JButton cadastroPlaylist;
 	private JButton refreshPlaylist;
 
-	//private JButton botaoVoltar = new JButton("Voltar");
-
 	private static ControleDados dados;
 	private JList<String> listaArtistasCadastrados;
 	private JList<String> listaMusicasCadastrados;
@@ -38,10 +36,9 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
 			titulo.setForeground(new Color(160, 75, 209, 255));
 			listaArtistasCadastrados.setBackground(new Color(255, 255, 255, 255));
-			//listaArtistasCadastrados.setForeground(new Color(160, 75, 209, 255));
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(190, 10, 250, 30);
+			titulo.setBounds(190, 20, 250, 30);
 			listaArtistasCadastrados.setBounds(20, 50, 470, 300);
 			listaArtistasCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaArtistasCadastrados.setVisibleRowCount(10);
@@ -50,12 +47,10 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			refreshArtista.setBackground(new Color(160, 75, 209, 255));
 			cadastroArtista.setBounds(120, 380, 100, 30);
 			refreshArtista.setBounds(250, 380, 100, 30);
-			//botaoVoltar.setBounds(10, 177, 100, 30);
 
 			janela.setLayout(null);
 
 			janela.setSize(525, 600);
-			//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			janela.setLocationRelativeTo(null);
 			janela.getContentPane().setBackground(new java.awt.Color(33,33,33,255));
 
@@ -63,14 +58,11 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			janela.add(listaArtistasCadastrados);
 			janela.add(cadastroArtista);
 			janela.add(refreshArtista);
-			//janela.add(botaoVoltar);
 
-			//janela.setSize(400, 250);
 			janela.setVisible(true);
 
 			cadastroArtista.addActionListener(this);
 			refreshArtista.addActionListener(this);
-			//botaoVoltar.addActionListener(this);
 			listaArtistasCadastrados.addListSelectionListener(this);
 
 			break;
@@ -87,20 +79,19 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			listaMusicasCadastrados.setBackground(new Color(255, 255, 255, 255));
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(190, 10, 250, 30);
-			listaMusicasCadastrados.setBounds(20, 50, 470, 300);
+			titulo.setBounds(170, 20, 250, 30);
+			listaMusicasCadastrados.setBounds(20, 80, 470, 300);
 			listaMusicasCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaMusicasCadastrados.setVisibleRowCount(10);
 
 			cadastroMusica.setBackground(new Color(160, 75, 209, 255));
 			refreshMusica.setBackground(new Color(160, 75, 209, 255));
-			cadastroMusica.setBounds(120, 380, 100, 30);
-			refreshMusica.setBounds(250, 380, 100, 30);
+			cadastroMusica.setBounds(120, 410, 100, 30);
+			refreshMusica.setBounds(250, 410, 100, 30);
 
 			janela.setLayout(null);
 
 			janela.setSize(525, 600);
-			//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			janela.setLocationRelativeTo(null);
 			janela.getContentPane().setBackground(new java.awt.Color(33,33,33,255));
 
@@ -109,7 +100,6 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			janela.add(cadastroMusica);
 			janela.add(refreshMusica);
 
-			//janela.setSize(400, 250);
 			janela.setVisible(true);
 
 			cadastroMusica.addActionListener(this);
@@ -130,7 +120,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			listaPlaylistsCadastrados.setBackground(new Color(255, 255, 255, 255));
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(190, 10, 250, 30);
+			titulo.setBounds(190, 20, 250, 30);
 			listaPlaylistsCadastrados.setBounds(20, 50, 470, 300);
 			listaPlaylistsCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 			listaPlaylistsCadastrados.setVisibleRowCount(10);
@@ -143,7 +133,6 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			janela.setLayout(null);
 
 			janela.setSize(525, 600);
-			//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			janela.setLocationRelativeTo(null);
 			janela.getContentPane().setBackground(new java.awt.Color(33,33,33,255));
 
@@ -152,7 +141,6 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			janela.add(cadastroPlaylist);
 			janela.add(refreshPlaylist);
 
-			//janela.setSize(400, 250);
 			janela.setVisible(true);
 
 			cadastroPlaylist.addActionListener(this);
@@ -200,11 +188,6 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			listaPlaylistsCadastrados.setListData(new ControlePlaylist(dados).getNomePlaylist());
 			listaPlaylistsCadastrados.updateUI();
 		}
-
-		//if(src == botaoVoltar) {
-		//	new TelaInicial();
-		//	janela.dispose();
-		//}
 	}
 
 	//Captura eventos relacionados ao JList

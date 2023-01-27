@@ -95,18 +95,6 @@ public class TelaInicial implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent ae) {
-		/*if ("musica" == ae.getActionCommand()) {
-			frame.dispose();
-			new TelaMusica();
-		}
-		else if ("artista" == ae.getActionCommand()) {
-			frame.dispose();
-			new TelaArtista();
-		}
-		else if ("playlist" == ae.getActionCommand()) {
-			frame.dispose();
-			new TelaPlaylist();
-		}*/
 		Object src = ae.getSource();
 		
 		if(src == botaoArtista)

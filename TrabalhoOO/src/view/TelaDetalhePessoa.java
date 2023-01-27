@@ -10,12 +10,8 @@ import controller.*;
 public class TelaDetalhePessoa implements ActionListener, ListSelectionListener {
 
 	String artistas[] = { "manoel gome", "top", "mc little popcorn"};
-	//TelaPessoa.mostrarDados(d, 1);
-	//objeto.get
 
 	private JFrame janela;
-
-	//private JLabel valorNome1 = new JLabel("");
 
 	private JLabel labelNome = new JLabel("Nome: ");
 	private JTextField valorNome;
@@ -43,11 +39,16 @@ public class TelaDetalhePessoa implements ActionListener, ListSelectionListener 
 
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
-	private JButton botaoEditar = new JButton("Editar");;
+	private JButton botaoEditar = new JButton("Editar");
 	
 	private JList<String> listaMusicasCadastradosA;
 	private JList<String> listaMusicasCadastradosP;
 	private String[] listaNomes = new String[50];
+
+	private JTextArea letra;
+	private JButton botaoExcluirL = new JButton("Excluir letra");
+	private JButton botaoSalvarL = new JButton("Salvar letra");
+	private JButton botaoEditarL = new JButton("Editar letra");
 
 	private String[] novoDado = new String[9];
 	private static ControleDados dados;
@@ -118,6 +119,8 @@ public class TelaDetalhePessoa implements ActionListener, ListSelectionListener 
 			labelAno.setForeground(new Color(160, 75, 209, 255));
 			labelDuracao.setForeground(new Color(160, 75, 209, 255));
 			labelArt.setForeground(new Color(160, 75, 209, 255));
+
+			letra = new JTextArea("");
 		}
 		else if (op == 6) { //Preenche dados com dados do professor clicado
 			valorNomePlaylist = new JTextField(dados.getPlaylists()[pos].getNomePlaylist(), 200);
@@ -172,6 +175,8 @@ public class TelaDetalhePessoa implements ActionListener, ListSelectionListener 
 			listaNomes = new ControleMusica(dados).getNomM();
 			listaMusicasCadastradosA = new JList<String>(listaNomes);
 			listaMusicasCadastradosP = new JList<String>(listaNomes);
+
+			letra = new JTextArea("");
 		}
 
 		//Coloca os campos relacionados a etc se Artista
@@ -253,6 +258,21 @@ public class TelaDetalhePessoa implements ActionListener, ListSelectionListener 
 			valorDuracao.setBounds(180, 80, 180, 25);
 			labelArt.setBounds(30, 110, 150, 25);
 			valorArt.setBounds(180, 110, 180, 25);
+			
+			letra.setLineWrap(true);
+			letra.setEditable(false);
+			letra.setBounds(20, 150, 470, 300);
+			botaoEditarL.setBounds(20, 500, 115, 30);
+			botaoSalvarL.setBounds(150, 500, 115, 30);
+			botaoExcluirL.setBounds(280, 500, 115, 30);
+			botaoEditarL.setBackground(new Color(160,75,209,255));
+			botaoSalvarL.setBackground(new Color(160, 75, 209, 255));
+			botaoExcluirL.setBackground(new Color(160, 75, 209, 255));
+			botaoEditarL.addActionListener(this);
+			botaoExcluirL.addActionListener(this);
+			this.janela.add(botaoEditarL);
+			this.janela.add(botaoSalvarL);
+			this.janela.add(botaoExcluirL);
 
 			this.janela.add(labelNomM);
 			this.janela.add(valorNomM);
@@ -262,6 +282,7 @@ public class TelaDetalhePessoa implements ActionListener, ListSelectionListener 
 			this.janela.add(valorDuracao);
 			this.janela.add(labelArt);
 			this.janela.add(valorArt);
+			this.janela.add(letra);
 		}
 
 		//Coloca campos relacionados a etc se playlist
@@ -309,11 +330,9 @@ public class TelaDetalhePessoa implements ActionListener, ListSelectionListener 
 		}
 
 		botaoSalvar.setBackground(new Color(160, 75, 209, 255));
-
 		this.janela.add(botaoSalvar);
 
 		this.janela.setLayout(null);
-
 		this.janela.setSize(525, 600);
 		this.janela.setVisible(true);
 
@@ -410,6 +429,15 @@ public class TelaDetalhePessoa implements ActionListener, ListSelectionListener 
 		/*else if (ae.getActionCommand().equals("salvar letra")){
 			letra.setEditable(false);
 		}*/
+		if (src == botaoEditarL) {
+			letra.setEditable(true);
+		}
+		if (src == botaoSalvarL) {
+			letra.setEditable(false);
+		}
+		if (src == botaoExcluirL){
+			letra.setText("");
+		}
 	}
 
 	public void valueChanged(ListSelectionEvent e) {

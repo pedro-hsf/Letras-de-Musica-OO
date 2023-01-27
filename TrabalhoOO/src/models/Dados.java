@@ -13,7 +13,6 @@ public class Dados {
 	//private int qtdUsuarios = 0;
 	private Letra[] letras = new Letra[10];
 	private int qtdLetras = 0;
-    //private Genero[] genero = new Genero[10];
     
     public Artista[] getArtistas() {
         return artistas;
@@ -108,13 +107,5 @@ public class Dados {
     
     public void setQtdUsuarios(int qtdUsuarios) {
         this.qtdUsuarios = qtdUsuarios;
-    }
-    
-    public Genero[] getGenero() {
-        return genero;
-    }
-    
-    //public void setGenero(Genero[] Genero) {
-    //    this.Genero = Genero;
-    //}*/
+    }*/
 }
