@@ -29,12 +29,12 @@ public class ControleDados {
 		return this.d.getMusicas();
 	}
 	
-	// a posicao 0 do vetor dadosArtistas indica onde os dados devem ser inseridos
-	public boolean inserirEditarArtista(String[] dadosArtistas) {
-		Artista a = new Artista(dadosArtistas[1], Integer.parseInt(dadosArtistas[2]), dadosArtistas[3]
-		, dadosArtistas[4]);
-		//, ArrayList(dadosArtistas[4]));
-		d.inserirEditarArtista(a, Integer.parseInt(dadosArtistas[0]));
+	// a posicao 0 do vetor dadosMusica indica onde os dados devem ser inseridos
+	public boolean inserirEditarArtista(String[] dadosMusica) {
+		Artista a = new Artista(dadosMusica[1], Integer.parseInt(dadosMusica[2]), dadosMusica[3]
+		, dadosMusica[4]);
+		//, ArrayList(dadosMusica[4]));
+		d.inserirEditarArtista(a, Integer.parseInt(dadosMusica[0]));
 		return true;
 	}
 
@@ -89,5 +89,14 @@ public class ControleDados {
 			d.setQtdMusicas(d.getQtdMusicas() - 1);
 			return true;
 		}
+	}
+
+	public int buscarMusica(String nomeMusica) {
+        for(int i = 0; i < d.getQtdMusicas(); i++) {
+            if(d.getMusicas()[i].getNomeMusica().equals(nomeMusica)) {
+                return i;
+            }
+        }
+        return -1;
 	}
 }

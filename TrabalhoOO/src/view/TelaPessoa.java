@@ -14,10 +14,13 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	private JButton cadastroMusica;
 	private JButton refreshMusica;
 
-	private static ControleDados dados;
+	private ControleDados dados;
 	private JList<String> listaArtistasCadastrados;
 	private JList<String> listaMusicasCadastrados;
 	private String[] listaNomes = new String[50];
+	
+	private JTextField buscar;
+	private JButton botaoBuscar;
 
 	public void mostrarDados(ControleDados d, int op){
 		dados = d;
@@ -128,10 +131,6 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 		if(src == cadastroMusica)
 			new TelaDetalhePessoa().inserirEditar(2, dados, this, 0);
 
-		//Cadastro de novo playlist
-		//if(src == cadastroPlaylist)
-			//new TelaDetalhePessoa().inserirEditar(3, dados, this, 0);
-
 		// Atualiza a lista de nomes de Artistas mostrada no JList
 		if(src == refreshArtista) {
 			listaArtistasCadastrados.setListData(new ControleArtista(dados).getNomeArtista());			
@@ -144,11 +143,19 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			listaMusicasCadastrados.updateUI();
 		}
 
-		// Atualiza a lista de nomes de playlist mostrada no JList
-		/*if(src == refreshPlaylist) {
-			listaPlaylistsCadastrados.setListData(new ControlePlaylist(dados).getNomePlaylist());
-			listaPlaylistsCadastrados.updateUI();
-		}*/
+		//if (e.getActionCommand() == "buscarMusica") {
+		if (src == botaoBuscar) {
+			this.dados = dados;
+			String nomeMusica = buscar.getText();
+
+			int idxMusica = dados.buscarMusica(nomeMusica);
+			if (idxMusica == -1) {
+				JOptionPane.showMessageDialog(null, "Essa música não está cadastrada!");
+			} else {
+				new TelaDetalhePessoa().inserirEditar(5, dados, this, 
+					listaMusicasCadastrados.getSelectedIndex());
+			}
+		}
 	}
 
 	//Captura eventos relacionados ao JList

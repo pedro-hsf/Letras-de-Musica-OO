@@ -240,6 +240,7 @@ public class TelaDetalhePessoa implements ActionListener{
 			botaoSalvarL.setBackground(new Color(160, 75, 209, 255));
 			botaoExcluirL.setBackground(new Color(160, 75, 209, 255));
 			botaoEditarL.addActionListener(this);
+			botaoSalvarL.addActionListener(this);
 			botaoExcluirL.addActionListener(this);
 			this.janela.add(botaoEditarL);
 			this.janela.add(botaoSalvarL);
@@ -375,10 +376,7 @@ public class TelaDetalhePessoa implements ActionListener{
 		if (src == botaoEditarL) {
 			letra.setEditable(true);
 		}
-		/*else if (src == botaoSalvarL) {
-			letra.setEditable(false);
-		}*/
-		else if (e.getActionCommand().equals("Salvar letra")){
+		if (src == botaoSalvarL) {
 			letra.setEditable(false);
 		}
 		if (src == botaoExcluirL){
