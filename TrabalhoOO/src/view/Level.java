@@ -129,4 +129,4 @@ public class Level implements ActionListener{
 			frame.dispose();
 		}
 	}
-}	
+}

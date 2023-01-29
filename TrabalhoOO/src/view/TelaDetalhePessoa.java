@@ -375,7 +375,10 @@ public class TelaDetalhePessoa implements ActionListener{
 		if (src == botaoEditarL) {
 			letra.setEditable(true);
 		}
-		if (src == botaoSalvarL) {
+		/*else if (src == botaoSalvarL) {
+			letra.setEditable(false);
+		}*/
+		else if (e.getActionCommand().equals("Salvar letra")){
 			letra.setEditable(false);
 		}
 		if (src == botaoExcluirL){
