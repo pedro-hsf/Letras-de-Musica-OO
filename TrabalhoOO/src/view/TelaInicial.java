@@ -13,7 +13,6 @@ public class TelaInicial implements ActionListener{
 	private static JFrame frame;
 	private static JButton botaoMusica;
 	private static JButton botaoArtista;
-	private static JButton botaoPlaylist;
 	private static JButton botaoUsuario;
 
 	public static ControleDados dados = new ControleDados();
@@ -50,7 +49,6 @@ public class TelaInicial implements ActionListener{
 	public void construir() {
 		botaoArtista();
 		botaoMusica();
-		botaoPlaylist();
 		botaoUsuario();
 	}
 
@@ -70,15 +68,6 @@ public class TelaInicial implements ActionListener{
 		botaoMusica.setActionCommand("musica");
 		botaoMusica.addActionListener(this);
 		frame.add(botaoMusica);
-	}	
-	
-	public void botaoPlaylist() {
-		botaoPlaylist = new JButton("Playlists");
-		botaoPlaylist.setBounds(90, 450, 300, 30);
-		botaoPlaylist.setBackground(new Color(160,75,209,255));
-		botaoPlaylist.setActionCommand("playlist");
-		botaoPlaylist.addActionListener(this);
-		frame.add(botaoPlaylist);
 	}
 
 	public void botaoUsuario() {
@@ -102,11 +91,8 @@ public class TelaInicial implements ActionListener{
 
 		if(src == botaoMusica)
 			new TelaPessoa().mostrarDados(dados, 2);
-			
-		if(src == botaoPlaylist)
-			new TelaPessoa().mostrarDados(dados, 3);
 		
 		if(src == botaoUsuario)
-			new TelaPessoa().mostrarDados(dados, 4);
+			new TelaPessoa().mostrarDados(dados, 3);
 	}
 }

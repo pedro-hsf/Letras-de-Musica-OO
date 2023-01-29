@@ -7,8 +7,6 @@ public class Dados {
     private int qtdArtistas = 0;
 	private Musica[] musicas = new Musica[10];
 	private int qtdMusicas = 0;
-    private Playlist[] playlist = new Playlist[10];
-    private int qtdPlaylists = 0;
 	//private Usuario[] usuarios = new Usuario[10];
 	//private int qtdUsuarios = 0;
 	private Letra[] letras = new Letra[10];
@@ -54,27 +52,6 @@ public class Dados {
     
     public void setQtdMusicas(int qtdMusicas) {
         this.qtdMusicas = qtdMusicas;
-    }
-    
-    public Playlist[] getPlaylists() {
-        return playlist;
-    }
-
-    public void setPlaylists(Playlist[] playlists) {
-        this.playlist = playlists;
-    }
-
-    public int getQtdPlaylists() {
-        return qtdPlaylists;
-    }
-
-    public void inserirEditarPlaylist(Playlist p, int pos) {
-        this.playlist[pos] = p;
-        if(pos == qtdPlaylists) qtdPlaylists++;
-    }
-
-    public void setQtdPlaylists(int qtdPlaylists) {
-        this.qtdPlaylists = qtdPlaylists;
     }
 
     public Letra[] getLetras() {

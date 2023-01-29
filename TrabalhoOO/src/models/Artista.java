@@ -25,45 +25,44 @@ public class Artista extends Pessoa {
 
 	public void setListaMusicas(ArrayList<String> listaMusicas) {
 		ListaMusicas = listaMusicas;
-	}
-
-	/*public String toString() {
-		return "LISTA DE MUSICAS ADICIONADAS : " + ListaMusicas + "\n\nNOME ARTISTA OU BANDA : " 
-				+ getNome() + "\n\nNacionalidade ARTISTA(S) : " + getNacionalidade() + "\n\nNACIONALNacionalidade ARTISTA OU BANDA : " 
-				+ getNacionalNacionalidade();
 	}*/
-
+	
 	public String getNome() {
 		return nome;
 	}
-
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
 	public int getIdade() {
 		return idade;
 	}
-
+	
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-
+	
 	public String getNacionalidade() {
 		return nacionalidade;
 	}
-
+	
 	public void setNacionalidade(String nacionalidade) {
 		this.nacionalidade = nacionalidade;
 	}
-
+	
 	public String getGenero() {
 		return genero;
 	}
-
+	
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
+	
+		public String toString() {
+			return "\n\nNOME ARTISTA OU BANDA : " + getNome() + "\n\nIdade ARTISTA OU BANDA : " + getIdade() + 
+					"\n\nNacionalidade ARTISTA(S) : " + getNacionalidade();
+		}
 }
 
 	

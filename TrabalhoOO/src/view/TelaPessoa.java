@@ -13,13 +13,10 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	private JButton refreshArtista;
 	private JButton cadastroMusica;
 	private JButton refreshMusica;
-	private JButton cadastroPlaylist;
-	private JButton refreshPlaylist;
 
 	private static ControleDados dados;
 	private JList<String> listaArtistasCadastrados;
 	private JList<String> listaMusicasCadastrados;
-	private JList<String> listaPlaylistsCadastrados;
 	private String[] listaNomes = new String[50];
 
 	public void mostrarDados(ControleDados d, int op){
@@ -68,7 +65,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			break;
 
 		case 2:// Mostrar dados de musicas cadastrados (JList)
-			listaNomes = new ControleMusica(dados).getNomM();
+			listaNomes = new ControleMusica(dados).getNomeMusica();
 			listaMusicasCadastrados = new JList<String>(listaNomes);
 			janela = new JFrame("Músicas");
 			titulo = new JLabel("Músicas");
@@ -109,43 +106,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			break;
 
 		case 3:// Mostrar dados de playlists cadastrados (JList)
-			listaNomes = new ControlePlaylist(dados).getNomePlaylist();
-			listaPlaylistsCadastrados = new JList<String>(listaNomes);
-			janela = new JFrame("Playlists");
-			titulo = new JLabel("Playlists");
-			cadastroPlaylist = new JButton("Cadastrar");
-			refreshPlaylist = new JButton("Carregar");
-
-			titulo.setForeground(new Color(160, 75, 209, 255));
-			listaPlaylistsCadastrados.setBackground(new Color(255, 255, 255, 255));
-
-			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(190, 20, 250, 30);
-			listaPlaylistsCadastrados.setBounds(20, 50, 470, 300);
-			listaPlaylistsCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-			listaPlaylistsCadastrados.setVisibleRowCount(10);
-
-			cadastroPlaylist.setBackground(new Color(160, 75, 209, 255));
-			refreshPlaylist.setBackground(new Color(160, 75, 209, 255));
-			cadastroPlaylist.setBounds(120, 380, 100, 30);
-			refreshPlaylist.setBounds(250, 380, 100, 30);
-
-			janela.setLayout(null);
-
-			janela.setSize(525, 600);
-			janela.setLocationRelativeTo(null);
-			janela.getContentPane().setBackground(new java.awt.Color(33,33,33,255));
-
-			janela.add(titulo);
-			janela.add(listaPlaylistsCadastrados);
-			janela.add(cadastroPlaylist);
-			janela.add(refreshPlaylist);
-
-			janela.setVisible(true);
-
-			cadastroPlaylist.addActionListener(this);
-			refreshPlaylist.addActionListener(this);
-			listaPlaylistsCadastrados.addListSelectionListener(this);
+			
 
 			break;
 
@@ -168,8 +129,8 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 			new TelaDetalhePessoa().inserirEditar(2, dados, this, 0);
 
 		//Cadastro de novo playlist
-		if(src == cadastroPlaylist)
-			new TelaDetalhePessoa().inserirEditar(3, dados, this, 0);
+		//if(src == cadastroPlaylist)
+			//new TelaDetalhePessoa().inserirEditar(3, dados, this, 0);
 
 		// Atualiza a lista de nomes de Artistas mostrada no JList
 		if(src == refreshArtista) {
@@ -179,15 +140,15 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
 		// Atualiza a lista de nomes de Musica mostrada no JList
 		if(src == refreshMusica) {
-			listaMusicasCadastrados.setListData(new ControleMusica(dados).getNomM());
+			listaMusicasCadastrados.setListData(new ControleMusica(dados).getNomeMusica());
 			listaMusicasCadastrados.updateUI();
 		}
 
 		// Atualiza a lista de nomes de playlist mostrada no JList
-		if(src == refreshPlaylist) {
+		/*if(src == refreshPlaylist) {
 			listaPlaylistsCadastrados.setListData(new ControlePlaylist(dados).getNomePlaylist());
 			listaPlaylistsCadastrados.updateUI();
-		}
+		}*/
 	}
 
 	//Captura eventos relacionados ao JList
@@ -202,11 +163,6 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 		if(e.getValueIsAdjusting() && src == listaMusicasCadastrados) {
 			new TelaDetalhePessoa().inserirEditar(5, dados, this, 
 					listaMusicasCadastrados.getSelectedIndex());
-		}
-
-		if(e.getValueIsAdjusting() && src == listaPlaylistsCadastrados) {
-			new TelaDetalhePessoa().inserirEditar(6, dados, this, 
-					listaPlaylistsCadastrados.getSelectedIndex());
 		}
 	}
 

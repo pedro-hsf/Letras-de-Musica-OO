@@ -12,7 +12,7 @@ public class TelaLetra implements ActionListener{
 	private static JButton botaoSalvar;
 	
 	public TelaLetra() {
-		frame = new JFrame("TelaLetra of Concern");
+		frame = new JFrame("TelaLetra");
 		frame.setSize(500, 700);
 		frame.setLayout(null);
 		frame.setLocationRelativeTo(null);
@@ -125,7 +125,7 @@ public class TelaLetra implements ActionListener{
 			letra.setEditable(false);
 		}
 		else if ("voltar" == ae.getActionCommand()) {
-			new TelaMusica();
+			//new TelaMusica();
 			frame.dispose();
 		}
 	}

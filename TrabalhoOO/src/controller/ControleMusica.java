@@ -11,10 +11,10 @@ public class ControleMusica {
 		this.qtdMusicas = d.getQtdMusicas();
 	}
 	
-	public String[] getNomM() {
+	public String[] getNomeMusica() {
 		String[] s = new String[qtdMusicas];
 		for(int i = 0; i < qtdMusicas; i++) {
-			s[i] = m[i].getNomM();
+			s[i] = m[i].getNomeMusica();
 		}
 		
 		return s;
@@ -28,8 +28,8 @@ public class ControleMusica {
 		this.qtdMusicas = qtd;
 	}
 	
-	public String getNomM(int i) {		
-		return m[i].getNomM();
+	public String getNomeMusica(int i) {		
+		return m[i].getNomeMusica();
 	}
 	
 	public String getAno(int i) {

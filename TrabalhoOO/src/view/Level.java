@@ -125,7 +125,7 @@ public class Level implements ActionListener{
 			letra.setEditable(false);
 		}
 		else if ("voltar" == ae.getActionCommand()) {
-			new TelaMusica();
+			//new TelaMusica();
 			frame.dispose();
 		}
 	}
