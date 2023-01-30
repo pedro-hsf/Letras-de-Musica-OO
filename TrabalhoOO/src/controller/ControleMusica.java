@@ -2,9 +2,22 @@ package controller;
 
 import models.*;
 
+/**
+ * Classe ControleMusica controla os dados das músicas criadas
+ * 
+ * @author Nicolas Bomfim Dias Bandeira
+ * @author Pedro Henrique dos Santos Ferreira
+ */
+
 public class ControleMusica {
 	private Musica[] m;
 	private int qtdMusicas;
+
+	/**
+     * Construtor de ControleMusica
+     * 
+     * @param d ControleDados
+     */
 	
 	public ControleMusica(ControleDados d) {
 		this.m = d.getMusicas();

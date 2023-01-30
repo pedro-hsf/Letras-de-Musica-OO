@@ -2,9 +2,22 @@ package controller;
 
 import models.*;
 
+/**
+ * Classe ControleArtista controla as informações da classe Artista
+ * 
+ * @author Nicolas Bomfim Dias Bandeira
+ * @author Pedro Henrique dos Santos Ferreira
+ */
+
 public class ControleArtista {
 	private Artista[] a;
 	private int qtdArtistas;
+
+	/**
+     * Construtor de ControleArtista
+     * 
+     * @param d ControleDados
+     */
 	
 	public ControleArtista(ControleDados d) {
 		a = d.getArtistas();

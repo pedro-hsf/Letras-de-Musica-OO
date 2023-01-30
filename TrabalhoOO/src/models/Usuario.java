@@ -1,40 +1,31 @@
 package models;
 
+/**
+ * Classe Usuario herda da classe abstrata Pessoa
+ * 
+ * @author Nicolas Bomfim Dias Bandeira
+ * @author Pedro Henrique dos Santos Ferreira
+ */
+
 public class Usuario extends Pessoa {
 
 	public Usuario() {
 		super();
 	}
 
+	/**
+	 * Construtor de Usuario
+	 * 
+	 * @param nomeUsuario Nome do Usuario
+	 * @param idadeUsuario Idade do Usuario
+	 * @param nacionalidadeUsuario Nacionalidade do Usuario
+	 */
+
 	public Usuario(String nomeUsuario, int idadeUsuario, String nacionalidadeUsuario) {
 		this.nome = nomeUsuario;
 		this.idade = idadeUsuario;
 		this.nacionalidade = nacionalidadeUsuario;
 	}
-
-	/*public String getNomeUsuario() {
-		return nomeUsuario;
-	}
-	
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
-	}
-	
-	public int getIdadeUsuario() {
-		return idadeUsuario;
-	}
-	
-	public void setIdadeUsuario(int idadeUsuario) {
-		this.idadeUsuario = idadeUsuario;
-	}
-	
-	public String getNacionalidadeUsuario() {
-		return nacionalidadeUsuario;
-	}
-	
-	public void setNacionalidadeUsuario(String nacionalidadeUsuario) {
-		this.nacionalidadeUsuario = nacionalidadeUsuario;
-	}*/
 
 	public String getNome() {
 		return nome;

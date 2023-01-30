@@ -1,15 +1,18 @@
 package view;
 
+/**
+ * Classe TelaDetalhePessoa responsável por exibir tanto a criação de Músicas e Artistas
+ * 
+ * @author Nicolas Bomfim Dias Bandeira
+ * @author Pedro Henrique dos Santos Ferreira
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-//import javax.swing.event.*;
 import controller.*;
-//import java.util.*;
 
 public class TelaDetalhePessoa implements ActionListener{
-
-	String artistas[] = { "manoel gome", "top", "mc little popcorn"};
 
 	private JFrame janela;
 
@@ -28,16 +31,6 @@ public class TelaDetalhePessoa implements ActionListener{
 	private JTextField valorAno;
 	private JLabel labelDuracao = new JLabel("Duração: ");
 	private JTextField valorDuracao;
-	private JLabel labelArt = new JLabel("Artista: ");
-	//private JComboBox<String> valorArt = new JComboBox<>(listaArtistasCadastrados);
-	private JComboBox<String> valorArt = new JComboBox<>(artistas);
-
-	private JLabel labelNomeU = new JLabel("Nome: ");
-	private JTextField valorNomeU;
-	private JLabel labelIdaUsuario = new JLabel("Idade: ");
-	private JTextField valorIdaUsuario;
-	private JLabel labelNacUsuario = new JLabel("Nacionalidade: ");
-	private JTextField valorNacUsuario;
 
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
@@ -67,14 +60,12 @@ public class TelaDetalhePessoa implements ActionListener{
 
 		if (op == 1) s = "Adicionar Artista";
 		if (op == 2) s = "Adicionar Música";
-		if (op == 3) s = "Adicionar Playlist";
-		if (op == 4) s = "Detalhe de Artista";
-		if (op == 5) s = "Detalhe de Música";
+		if (op == 3) s = "Detalhe de Artista";
+		if (op == 4) s = "Detalhe de Música";
 
 		janela = new JFrame(s);
 
-		//Preenche dados com dados do Artista clicado
-		if (op == 4) {
+		if (op == 3) {
 			valorNome = new JTextField(dados.getArtistas()[pos].getNome(), 200);
 			valorIda = new JTextField(String.valueOf(dados.getArtistas()[pos].getIdade()), 200);
             valorNac = new JTextField(dados.getArtistas()[pos].getNacionalidade(), 200);
@@ -86,7 +77,6 @@ public class TelaDetalhePessoa implements ActionListener{
 			valorGen.setEditable(false);
 
 			janela.setSize(525, 600);
-			//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			janela.setLocationRelativeTo(null);
 			janela.getContentPane().setBackground(new Color(33,33,33,255));
 
@@ -95,7 +85,7 @@ public class TelaDetalhePessoa implements ActionListener{
 			labelNac.setForeground(new Color(160, 75, 209, 255));
 			labelGen.setForeground(new Color(160, 75, 209, 255));
 		}
-        else if (op == 5) { //Preenche dados com dados do professor clicado
+        else if (op == 4) { 
 			valorNomeMusica = new JTextField(dados.getMusicas()[pos].getNomeMusica(), 200);
 			valorAno = new JTextField(String.valueOf(dados.getMusicas()[pos].getAno()), 200);
             valorDuracao = new JTextField(dados.getMusicas()[pos].getDuracao(), 200);
@@ -105,23 +95,16 @@ public class TelaDetalhePessoa implements ActionListener{
 			valorDuracao.setEditable(false);
 
 			janela.setSize(525, 600);
-			//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			janela.setLocationRelativeTo(null);
 			janela.getContentPane().setBackground(new Color(33,33,33,255));
 
 			labelNomeMusica.setForeground(new Color(160, 75, 209, 255));
 			labelAno.setForeground(new Color(160, 75, 209, 255));
 			labelDuracao.setForeground(new Color(160, 75, 209, 255));
-			labelArt.setForeground(new Color(160, 75, 209, 255));
 
 			letra = new JTextArea("");
 		}
-		else if (op == 6) { //Preenche dados com dados do professor clicado
-			/*valorNomeUsu = new JTextField(dados.getUsuarios()[pos].getNome(), 200);
-			valorIdaUsu = new JTextField(String.valueOf(dados.getUsuarios()[pos].getIdade()), 200);
-            valorNacUsu = new JTextField(dados.getUsuarios()[pos].getNacionalidade(), 200);*/
-		}
-        else { //Não preenche com dados
+        else { 
 			valorNome = new JTextField(200);
 			valorIda = new JTextField(200);
 			valorNac = new JTextField(200);
@@ -129,9 +112,6 @@ public class TelaDetalhePessoa implements ActionListener{
 			valorNomeMusica = new JTextField(200);
 			valorAno = new JTextField(200);
 			valorDuracao = new JTextField(200);
-			valorNome = new JTextField(200);
-			valorIda = new JTextField(200);
-			valorNac = new JTextField(200);
 
 			labelNome.setForeground(new Color(160, 75, 209, 255));
 			labelIda.setForeground(new Color(160, 75, 209, 255));
@@ -140,10 +120,8 @@ public class TelaDetalhePessoa implements ActionListener{
 			labelNomeMusica.setForeground(new Color(160, 75, 209, 255));
 			labelAno.setForeground(new Color(160, 75, 209, 255));
 			labelDuracao.setForeground(new Color(160, 75, 209, 255));
-			labelArt.setForeground(new Color(160, 75, 209, 255));
 
 			janela.setSize(525, 600);
-			//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			janela.setLocationRelativeTo(null);
 			janela.getContentPane().setBackground(new java.awt.Color(33,33,33,255));
 
@@ -152,7 +130,6 @@ public class TelaDetalhePessoa implements ActionListener{
 			letra = new JTextArea("");
 		}
 
-		//Coloca os campos relacionados a etc se Artista
 		if (op == 1) {
 			labelNome.setBounds(30, 20, 150, 25);
 			valorNome.setBounds(180, 20, 180, 25);
@@ -173,7 +150,7 @@ public class TelaDetalhePessoa implements ActionListener{
 			this.janela.add(valorGen);
 		}
 
-		if (op == 4) {
+		if (op == 3) {
 			labelNome.setBounds(30, 20, 150, 25);
 			valorNome.setBounds(180, 20, 180, 25);
 			labelIda.setBounds(30, 50, 180, 25);
@@ -192,13 +169,12 @@ public class TelaDetalhePessoa implements ActionListener{
 			this.janela.add(labelGen);
 			this.janela.add(valorGen);
 
-			botaoMusicas.setBounds(20, 500, 115, 30);
+			botaoMusicas.setBounds(180, 280, 115, 30);
 			botaoMusicas.setBackground(new Color(160,75,209,255));
 			botaoMusicas.addActionListener(this);
 			this.janela.add(botaoMusicas);
 		}
 
-		//Coloca campos relacionados a etc se musica
 		if (op == 2) {
 			labelNomeMusica.setBounds(30, 20, 150, 25);
 			valorNomeMusica.setBounds(180, 20, 180, 25);
@@ -206,8 +182,6 @@ public class TelaDetalhePessoa implements ActionListener{
 			valorAno.setBounds(180, 50, 180, 25);
         	labelDuracao.setBounds(30, 80, 150, 25);
 			valorDuracao.setBounds(180, 80, 180, 25);
-			labelArt.setBounds(30, 110, 150, 25);
-			valorArt.setBounds(180, 110, 180, 25);
 
 			this.janela.add(labelNomeMusica);
 			this.janela.add(valorNomeMusica);
@@ -215,11 +189,9 @@ public class TelaDetalhePessoa implements ActionListener{
 			this.janela.add(valorAno);
         	this.janela.add(labelDuracao);
 			this.janela.add(valorDuracao);
-			this.janela.add(labelArt);
-			this.janela.add(valorArt);
 		}
 
-		if (op == 5) {
+		if (op == 4) {
 
 			labelNomeMusica.setBounds(30, 20, 150, 25);
 			valorNomeMusica.setBounds(180, 20, 180, 25);
@@ -227,8 +199,6 @@ public class TelaDetalhePessoa implements ActionListener{
 			valorAno.setBounds(180, 50, 180, 25);
         	labelDuracao.setBounds(30, 80, 150, 25);
 			valorDuracao.setBounds(180, 80, 180, 25);
-			labelArt.setBounds(30, 110, 150, 25);
-			valorArt.setBounds(180, 110, 180, 25);
 			
 			letra.setLineWrap(true);
 			letra.setEditable(false);
@@ -252,30 +222,19 @@ public class TelaDetalhePessoa implements ActionListener{
 			this.janela.add(valorAno);
         	this.janela.add(labelDuracao);
 			this.janela.add(valorDuracao);
-			this.janela.add(labelArt);
-			this.janela.add(valorArt);
 			this.janela.add(letra);
 		}
 
-		//Coloca campos relacionados a etc se playlist
-		if (op == 3) {
-			
-		}
-
-		if (op == 6) {
-			
-		}
-
 		//Coloca botoes de excluir, editar e salvar
-		if (op == 4 || op == 5 || op == 6) {
+		if (op == 3 || op == 4) {
 			botaoSalvar.setBounds(150, 460, 115, 30);
+
 			botaoExcluir.setBounds(280, 460, 115, 30);
 			botaoExcluir.setBackground(new Color(160, 75, 209, 255));
 			this.janela.add(botaoExcluir);
 
 			botaoEditar.setBounds(20, 460, 115, 30);
 			botaoEditar.setBackground(new Color(160,75,209,255));
-			botaoEditar.addActionListener(this);
 			this.janela.add(botaoEditar);
 		}
 
@@ -288,6 +247,7 @@ public class TelaDetalhePessoa implements ActionListener{
 
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
+		botaoEditar.addActionListener(this);
 	}
 
 
@@ -300,26 +260,20 @@ public class TelaDetalhePessoa implements ActionListener{
 					novoDado[0] = Integer.toString(dados.getQtdArtistas());
 				else if (opcao == 2) // Adicionar nova musica
 					novoDado[0] = Integer.toString(dados.getQtdMusicas());
-				//else if (opcao == 3) // Adicionar nova playlist
-					//novoDado[0] = Integer.toString(dados.getQtdPlaylists());
 				else // edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 
-				if (opcao == 1 || opcao == 4) {
+				if (opcao == 1 || opcao == 3) {
 					novoDado[1] =  valorNome.getText();
                 	novoDado[2] =  valorIda.getText();
                 	novoDado[3] =  valorNac.getText();
 					novoDado[4] =  valorGen.getText();
-					res = dados.inserirEditarArtista(novoDado);
+					res = dados.adicionarArtista(novoDado);
 				} else{// if (opcao == 2 || opcao == 5) {
 					novoDado[1] =  valorNomeMusica.getText();
                 	novoDado[2] =  valorAno.getText();
                 	novoDado[3] =  valorDuracao.getText();
-					res = dados.inserirEditarMusica(novoDado);
-				//} else{
-					//novoDado[1] =  valorNomePlaylist.getText();
-                	//novoDado[2] =  valorAnoPlaylist.getText();
-					//res = dados.inserirEditarPlaylist(novoDado);
+					res = dados.adicionarMusica(novoDado);
 				}
 
 				if(res) {
@@ -338,39 +292,29 @@ public class TelaDetalhePessoa implements ActionListener{
 		if(src == botaoExcluir) {
 			boolean res = false;
 
-			if (opcao == 4) {//exclui Artista
+			if (opcao == 3) {//exclui Artista
 				res = dados.removerArtista(posicao);
 				if (res) mensagemSucessoExclusao(); 
-				//else mensagemErroExclusaoArtista(); 
 			}
 				
-			if (opcao == 5){ //exclui musica
+			if (opcao == 4){ //exclui musica
 				res = dados.removerMusica(posicao);
 				if (res) mensagemSucessoExclusao(); 
-				//else mensagemErroExclusaoMusica();
-			}
-
-			if (opcao == 6){ //exclui playlist
-				//else mensagemErroExclusaoPlaylist();
 			}
 		}
 
 		if(src == botaoEditar) {
-			if (opcao == 4) {//exclui Artista
+			if (opcao == 3) {//edita Artista
 				valorNome.setEditable(true);
 				valorIda.setEditable(true);
 				valorNac.setEditable(true);
 				valorGen.setEditable(true);
 			}
 				
-			if (opcao == 5){ //exclui musica
+			if (opcao == 4){ //edita musica
 				valorNomeMusica.setEditable(true);
 				valorAno.setEditable(true);
 				valorDuracao.setEditable(true);
-			}
-
-			if (opcao == 6){ //exclui playlist
-				
 			}
 		}
 		if (src == botaoEditarL) {

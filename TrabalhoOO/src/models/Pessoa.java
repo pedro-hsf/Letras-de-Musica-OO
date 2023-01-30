@@ -1,5 +1,12 @@
 package models;
 
+/**
+ * Classe Pessoa é uma classe Abstrata que simula uma pessoa
+ * 
+ * @author Nicolas Bomfim Dias Bandeira
+ * @author Pedro Henrique dos Santos Ferreira
+ */
+
 public abstract class Pessoa {
 	
 	protected String nome;
@@ -10,11 +17,11 @@ public abstract class Pessoa {
 		super();
 	}
 	
-	/*public Pessoa(String nome, int idade, String nacionalidade) {
+	public Pessoa(String nome, int idade, String nacionalidade) {
 		this.nome = nome;
 		this.idade = idade;
 		this.nacionalidade = nacionalidade;
-	}*/
+	}
 
 	public String getNome() {
 		return nome;
@@ -40,8 +47,8 @@ public abstract class Pessoa {
 		this.nacionalidade = nacionalidade;
 	}
 
-	/*public String toString() {
+	public String toString() {
 		return "Pessoa [nome=" + nome + ", idade=" + idade + ", nacionalidade=" + nacionalidade + "]";
-	}*/
+	}
 	
 }

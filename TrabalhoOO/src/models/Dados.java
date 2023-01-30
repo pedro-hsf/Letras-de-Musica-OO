@@ -1,16 +1,17 @@
 package models;
 
-//import java.util.*;
+/**
+ * Classe Dados que armazena os artistas e as músicas criadas
+ * 
+ * @author Nicolas Bomfim Dias Bandeira
+ * @author Pedro Henrique dos Santos Ferreira
+ */
 
 public class Dados {
-    private Artista[] artistas = new Artista[10];
+    private Artista[] artistas = new Artista[50];
     private int qtdArtistas = 0;
-	private Musica[] musicas = new Musica[10];
+	private Musica[] musicas = new Musica[50];
 	private int qtdMusicas = 0;
-	//private Usuario[] usuarios = new Usuario[10];
-	//private int qtdUsuarios = 0;
-	private Letra[] letras = new Letra[10];
-	private int qtdLetras = 0;
     
     public Artista[] getArtistas() {
         return artistas;
@@ -20,7 +21,11 @@ public class Dados {
         this.artistas = artistas;
     }
 
-    public void inserirEditarArtista(Artista a, int pos) {
+    /**
+	 * Adicionar Artista
+	 */
+
+    public void adicionarArtista(Artista a, int pos) {
         this.artistas[pos] = a;
         if(pos == qtdArtistas) qtdArtistas++;
     }
@@ -41,7 +46,11 @@ public class Dados {
         this.musicas = musicas;
     }
 
-    public void inserirEditaMusica(Musica m, int pos) {
+    /**
+	 * Adicionar Musica
+	 */
+
+    public void adicionarMusica(Musica m, int pos) {
         this.musicas[pos] = m;
         if(pos == qtdMusicas) qtdMusicas++;
     }
@@ -53,36 +62,4 @@ public class Dados {
     public void setQtdMusicas(int qtdMusicas) {
         this.qtdMusicas = qtdMusicas;
     }
-
-    public Letra[] getLetras() {
-        return letras;
-    }
-    
-    public void setLetras(Letra[] letras) {
-        this.letras = letras;
-    }
-
-    public int getQtdLetras() {
-        return qtdLetras;
-    }
-
-    public void setQtdLetras(int qtdLetras) {
-        this.qtdLetras = qtdLetras;
-    }
-    
-    /*public Usuario[] getUsuarios() {
-        return usuarios;
-    }
-    
-    public void setUsuarios(Usuario[] usuarios) {
-        this.usuarios = usuarios;
-    }
-    
-    public int getQtdUsuarios() {
-        return qtdUsuarios;
-    }
-    
-    public void setQtdUsuarios(int qtdUsuarios) {
-        this.qtdUsuarios = qtdUsuarios;
-    }*/
 }

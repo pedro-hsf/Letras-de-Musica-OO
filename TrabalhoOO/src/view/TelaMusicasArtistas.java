@@ -1,5 +1,12 @@
 package view;
 
+/**
+ * Classe TelaMusicasArtistas responsável por exibir a lista de músicas de um Artistas
+ * 
+ * @author Nicolas Bomfim Dias Bandeira
+ * @author Pedro Henrique dos Santos Ferreira
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -22,8 +29,7 @@ public class TelaMusicasArtistas implements ActionListener, ListSelectionListene
     public TelaMusicasArtistas(ControleDados dados) {
         this.dados = dados;
 		janela = new JFrame("Tela Musicas do Artista");
-		janela.setSize(500, 600);
-		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.setSize(525, 600);
 		janela.setLayout(null);
 		janela.setLocationRelativeTo(null);
 		janela.setVisible(true);
@@ -87,11 +93,11 @@ public class TelaMusicasArtistas implements ActionListener, ListSelectionListene
     public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 
-		//Cadastro de novo musica
+		//Cadastro de nova musica
 		if(src == cadastroMusica)
 			new TelaDetalhePessoa().inserirEditar(2, dados, p, 0);
 
-		// Atualiza a lista de nomes de Musica mostrada no JList
+		// Atualiza a lista de nomes
 		if(src == refreshMusica) {
 			listaMusicasCadastrados.setListData(new ControleMusica(dados).getNomeMusica());
 			listaMusicasCadastrados.updateUI();
@@ -100,13 +106,9 @@ public class TelaMusicasArtistas implements ActionListener, ListSelectionListene
 
     public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
-		//TelaPessoa p;
-        //this.p = p;
 
 		if(e.getValueIsAdjusting() && src == listaMusicasCadastrados) {
-			//TelaPessoa p;
-			//janela.dispose();
-			new TelaDetalhePessoa().inserirEditar(5, dados, p,
+			new TelaDetalhePessoa().inserirEditar(4, dados, p,
 					listaMusicasCadastrados.getSelectedIndex());
 		}
 	}

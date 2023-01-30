@@ -9,10 +9,6 @@ public class Letra {
 		this.idioma = idioma;
 		this.letraCompleta = letraCompleta;
 	}
-	
-	public Letra() { 
-		
-	}
 
 	public String getIdioma() {
 		return idioma;

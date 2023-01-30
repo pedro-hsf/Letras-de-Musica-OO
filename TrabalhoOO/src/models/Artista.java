@@ -1,31 +1,36 @@
 package models;
 
-//import java.util.*;
+/**
+ * Classe Artista herda da classe abstrata Pessoa
+ * Armazena nome, idade, nacionalidade e genero musical do artista
+ * 
+ * @author Nicolas Bomfim Dias Bandeira
+ * @author Pedro Henrique dos Santos Ferreira
+ */
 
 public class Artista extends Pessoa {
 	
-	//private ArrayList<String> ListaMusicas;
 	private String genero;
 
 	public Artista(){
 		super();
 	}
 
+	/**
+	 * Construtor de artista
+	 * 
+	 * @param n Nome do Artista
+	 * @param ida Idade do Artista
+	 * @param nac Nacionalidade do Artista
+	 * @param gen Genero musical do Artista
+	 */
+
 	public Artista(String n, int ida, String nac, String gen) {
 		this.nome = n;
 		this.idade = ida;
 		this.nacionalidade = nac;
 		this.genero = gen;
-		//ListaMusicas = listaMusicas;
-	}	
-
-	/*public ArrayList<String> getListaMusicas() {
-		return ListaMusicas;
 	}
-
-	public void setListaMusicas(ArrayList<String> listaMusicas) {
-		ListaMusicas = listaMusicas;
-	}*/
 	
 	public String getNome() {
 		return nome;
@@ -60,8 +65,8 @@ public class Artista extends Pessoa {
 	}
 	
 		public String toString() {
-			return "\n\nNOME ARTISTA OU BANDA : " + getNome() + "\n\nIdade ARTISTA OU BANDA : " + getIdade() + 
-					"\n\nNacionalidade ARTISTA(S) : " + getNacionalidade();
+			return "\n\nNOME ARTISTA OU BANDA : " + getNome() + "\n\nIDADE ARTISTA OU BANDA : " + getIdade() + 
+					"\n\nNACIONALIDADE ARTISTA(S) : " + getNacionalidade() + "\n\nGENERO MUSICAL ARTISTA OU BANDA : " + getGenero();
 		}
 }
 

@@ -1,5 +1,12 @@
 package view;
 
+/**
+ * Classe TelaInicial exibe botões para as outras telas
+ * 
+ * @author Nicolas Bomfim Dias Bandeira
+ * @author Pedro Henrique dos Santos Ferreira
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
@@ -7,15 +14,18 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import controller.*;
-//import models.*;
 
 public class TelaInicial implements ActionListener{
-	private static JFrame frame;
-	private static JButton botaoMusica;
-	private static JButton botaoArtista;
-	private static JButton botaoUsuario;
+	private JFrame frame;
+	private JButton botaoMusica;
+	private JButton botaoArtista;
+	private JButton botaoUsuario;
 
-	public static ControleDados dados = new ControleDados();
+	public ControleDados dados = new ControleDados();
+
+	/**
+	 * Contrutor do frame da tela inicial
+	 */
 	
 	public TelaInicial() {
 		frame = new JFrame("Tela inicial");
@@ -28,6 +38,10 @@ public class TelaInicial implements ActionListener{
 		construir();
 		frame.getContentPane().setBackground(new Color(33,33,33,255));
 	}
+
+	/**
+	 * Contrutor do template da tela inicial
+	 */
 	
 	public void template() {
 		try {
@@ -45,43 +59,49 @@ public class TelaInicial implements ActionListener{
 			System.exit(1);
 		}
 	}
+
+	/**
+	 * Contrutor dos botões
+	 */
 		
 	public void construir() {
-		botaoArtista();
-		botaoMusica();
 		botaoUsuario();
+		botaoArtista();
 	}
 
-	public void botaoArtista() {
-		botaoArtista = new JButton("Artistas");
-		botaoArtista.setBounds(90, 350, 300, 30);
-		botaoArtista.setBackground(new Color(160,75,209,255));
-		botaoArtista.setActionCommand("artista");
-		botaoArtista.addActionListener(this);
-		frame.add(botaoArtista);
-	}
+	/**
+	 * Botão para ir para tela do usuário
+	 */
 	
-	public void botaoMusica() {
-		botaoMusica = new JButton("Músicas");
-		botaoMusica.setBounds(90, 400, 300, 30);
-		botaoMusica.setBackground(new Color(160,75,209,255));
-		botaoMusica.setActionCommand("musica");
-		botaoMusica.addActionListener(this);
-		frame.add(botaoMusica);
-	}
-
 	public void botaoUsuario() {
 		botaoUsuario = new JButton("Usuário");
-		botaoUsuario.setBounds(390, 10, 100, 30);
+		botaoUsuario.setBounds(90, 350, 300, 30);
 		botaoUsuario.setBackground(new Color(160,75,209,255));
 		botaoUsuario.setActionCommand("usuario");
 		botaoUsuario.addActionListener(this);
 		frame.add(botaoUsuario);
 	}
+
+	/**
+	 * Botão para ir para tela do artista
+	 */
 		
+	public void botaoArtista() {
+		botaoArtista = new JButton("Artistas");
+		botaoArtista.setBounds(90, 400, 300, 30);
+		botaoArtista.setBackground(new Color(160,75,209,255));
+		botaoArtista.setActionCommand("artista");
+		botaoArtista.addActionListener(this);
+		frame.add(botaoArtista);
+	}
+
 	public static void main(String[] args) {
 		new TelaInicial();
 	}
+
+	/**
+	 * Método da interface ActionListener capaz de executar as funções dos botões
+	 */
 	
 	public void actionPerformed(ActionEvent ae) {
 		Object src = ae.getSource();
